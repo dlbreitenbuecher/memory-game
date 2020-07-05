@@ -1,0 +1,155 @@
+/* Fonts */
+@font-face {
+    font-family: newSuperMario;
+    src: url(assets/fonts/New_Super_Mario_Font_U.ttf);
+}
+
+@font-face{
+    font-family: mario64;
+    src: url(assets/fonts/SuperMario256.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+html {
+    font-size: 100%;
+}
+ 
+body {
+    min-height: 100vh;
+    font-family: var(--main-content-font);
+}
+
+:root{
+    --main-title-font: mario64;
+    --main-content-font: newSuperMario;
+}
+
+
+#siteGridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(100px, 200px) 1fr min-content min-content;
+    grid-template-areas: 
+                        "header"
+                        "cards"
+                        "score"
+                        "restart";
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    /* justify-content: center; */
+    /* align-content: center; */
+}
+
+
+header{
+    grid-area: header;
+    font-family: var(--main-title-font);
+    font-size: 2.5rem;
+    text-shadow: 8px 2px #242222;
+    text-shadow:
+    8px 2px 0 #242222,
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; 
+ }
+
+
+#cardGrid {
+    grid-area: cards;
+    /* max-height: 1200px;
+    max-width: 800px; */
+    display: grid;
+    /* grid-template-columns: repeat(4, minmax(100px, .5fr)); 
+    grid-template-rows: repeat(4, minmax(150px, 1fr)); */
+    grid-template-columns: repeat(4, calc(75px + 5vmin));
+    grid-template-rows: repeat(4, calc(125px + 5vmin));
+    gap: 8px 8px;
+    perspective: 2000px;
+    margin-bottom: 40px;
+}
+
+.card {
+    /* .card is a flex container for the card icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: red;
+    border-radius: 5%;
+    transform: scale(1);
+    box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    position: relative;
+    /* Produces 3d Flipping Effect together with (perspective: 2000px on #cardGrid) */
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card:active {
+    transform: scale(.95);
+    transition: transform .3s;
+}
+
+/* .cardIconFront = default deck image */
+.cardIconFront, .cardIconBack {
+    width: 70%;
+    height: auto;
+    padding-bottom: 5%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+/* Places the card-specific image on the back */
+.cardIconBack{
+    transform: rotateY(180deg);
+}
+
+/* Rotates the card 180 deg */
+.flip{
+    transform: rotateY(180deg);
+}
+
+#score-board{
+    grid-area: score
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+
+#score-board h4 {
+    line-height: 1.4;
+    margin-top: 1rem;
+}
+
+/* Current Score: 0 */
+#score-display{
+    display: flex;
+    align-items: center;
+}
+
+#score {
+    margin-left: 1.5rem;
+}
+
+#restart{
+    grid-area: restart;
+}
+
+#restart-button {
+    font-size: 2rem;
+    background-color: #43B047;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    letter-spacing: 1.5px;
+    font-family: var(--main-content-font);
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <meta name="description" content="A memory card game built with HTML, CSS, and JavaScript">
+    <meta name="keywords" content="memory card, game, javascript">
+    <meta name="author" content="David Breitenbuecher">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet" type="text/css"> 
+    <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" type="text/css">
+
+    <!-- Code developed with the aid of Marina Ferreira's Tutorial-->
+    <!-- https://www.freecodecamp.org/news/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae/ -->
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="siteGridContainer">
+    <header>
+        <h1 id="title"> <span class="letters">M</span><span class="letters">e</span><span class="letters">m</span><span class="letters">o</span><span class="letters">r</span><span class="letters">y</span> <span class="letters">G</span><span class="letters">a</span><span class="letters">m</span><span class="letters">e</span></h1>
+    </header>
+    <main>
+        <section id="cardGrid">
+            <!-- 16 cards -->
+            <!-- Images from: https://game-icons.net/tags/super-mario.html -->
+            <div class="card" data-name="Warp Pipe">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/warp-pipe.svg" alt="Warp Pipe">
+            </div>
+            <div class="card" data-name="Warp Pipe">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/warp-pipe.svg" alt="Warp Pipe">
+            </div>
+            <div class="card" data-name="Thwomp">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/thwomp.svg" alt="Thwomp">
+            </div>
+            <div class="card" data-name="Thwomp">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/thwomp.svg" alt="Thwomp">
+            </div>
+            <div class="card" data-name="Piranha Plant">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/carnivorous-plant.svg" alt="Piranha Plant">
+            </div>
+            <div class="card" data-name="Piranha Plant">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/carnivorous-plant.svg" alt="Piranha Plant">
+            </div>
+            <div class="card" data-name="Super Mushroom">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/super-mushroom.svg" alt="Super Mushroom">
+            </div>
+            <div class="card" data-name="Super Mushroom">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/super-mushroom.svg" alt="Super Mushroom">
+            </div>
+            <div class="card" data-name="Super Star">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/round-star.svg" alt="Super Star">
+            </div>
+            <div class="card" data-name="Super Star">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/round-star.svg" alt="Super Star">
+            </div>
+            <div class="card" data-name="Tanooki Leaf">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/falling-leaf.svg" alt="Tanooki Leaf">
+            </div>
+            <div class="card" data-name="Tanooki Leaf">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/falling-leaf.svg" alt="Tanooki Leaf">
+            </div>
+            <div class="card" data-name="Fire Flower">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/fire-flower.svg" alt="Fire Flower">
+            </div>
+            <div class="card" data-name="Fire Flower">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/fire-flower.svg" alt="Fire Flower">
+            </div>
+            <div class="card" data-name="Koopa Shell">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/turtle-shell.svg" alt="Koopa Shell">
+            </div>
+            <div class="card" data-name="Koopa Shell">
+                <img class='cardIconFront' src="assets/cardFront-retro-controller.svg" alt="Front Side of Card">
+                <img class='cardIconBack' src="assets/turtle-shell.svg" alt="Koopa Shell">
+            </div>
+        </section>
+    </main>
+    <section id="score-board">
+        <h2 id='score-display'>Current Score: </h2>
+        <h4>Try to get the lowest score!</h4>
+        <h5>A perfect game is 16 points</h5>
+    </section>
+
+    <section id="restart">
+        <form action="">
+        <input type="submit" value="Restart" id="restart-button">
+        </form>
+    </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
